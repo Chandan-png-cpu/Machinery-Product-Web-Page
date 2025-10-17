@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Insights - My Ceries</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+
+    <style>
+        :root { --primary-blue: #0A1F44; }
+        .bg-dark-custom { background-color: var(--primary-blue) !important; }
+        .jumbotron { background-color: var(--primary-blue); color: white; padding: 60px 0; }
+        .insights-list { min-height: 80vh; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">My Ceries</a>
+            </div>
+    </nav>
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Strategic Insights & Knowledge Hub</h1>
+            <p class="lead">Explore our complete library of articles, case studies, and whitepapers on advanced industrial technology.</p>
+        </div>
+    </div>
+
+    <section class="insights-list container py-5">
+        <h2 class="mb-4">Recent Publications</h2>
+        
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <select class="form-select" aria-label="Filter by Type">
+                    <option selected>Filter by Type</option>
+                    <option value="case-study">Case Study</option>
+                    <option value="article">Article</option>
+                    <option value="whitepaper">Whitepaper</option>
+                    <option value="news">News</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Search insights...">
+            </div>
+        </div>
+
+        <div class="list-group">
+            
+            <a href="#" class="list-group-item list-group-item-action py-3">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 text-primary">Reducing Energy Costs in Heavy Industrial Operations</h5>
+                    <small class="text-muted">Case Study | 2 days ago</small>
+                </div>
+                <p class="mb-1">A detailed analysis of how predictive maintenance slashed energy consumption by 15% and reduced costs by $1.2M at a major partner facility.</p>
+                <small class="badge bg-success"><i class="fas fa-bolt me-1"></i> Energy Efficiency</small>
+                <small class="badge bg-info text-dark"><i class="fas fa-users me-1"></i> Hexatech Dynamics</small>
+            </a>
+
+            <a href="#" class="list-group-item list-group-item-action py-3">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 text-primary">My Ceries Acquires Leading Automation Firm, Quantum Innovate</h5>
+                    <small class="text-muted">News | 1 week ago</small>
+                </div>
+                <p class="mb-1">The strategic acquisition significantly expands our AI-driven automation solutions portfolio and strengthens our market position.</p>
+                <small class="badge bg-danger"><i class="fas fa-bullhorn me-1"></i> Corporate News</small>
+                <small class="badge bg-warning text-dark"><i class="fas fa-robot me-1"></i> AI & Robotics</small>
+            </a>
+
+            <a href="#" class="list-group-item list-group-item-action py-3">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 text-primary">5 Ways IoT Transforms Maintenance Schedules (Whitepaper)</h5>
+                    <small class="text-muted">Whitepaper | 2 weeks ago</small>
+                </div>
+                <p class="mb-1">Learn how sensor integration and cloud analytics drive the shift from reactive to fully predictive equipment maintenance.</p>
+                <small class="badge bg-secondary"><i class="fas fa-cloud me-1"></i> IoT</small>
+                <small class="badge bg-secondary"><i class="fas fa-wrench me-1"></i> Maintenance</small>
+            </a>
+            
+             <a href="#" class="list-group-item list-group-item-action py-3">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 text-primary">The Future of Robotics in Precision Manufacturing</h5>
+                    <small class="text-muted">Article | 3 weeks ago</small>
+                </div>
+                <p class="mb-1">Exploring the role of integrated AI and lightweight materials in the next generation of industrial automation for high-speed factories.</p>
+                <small class="badge bg-warning text-dark"><i class="fas fa-robot me-1"></i> AI & Robotics</small>
+            </a>
+            
+        </div>
+        
+        <nav class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

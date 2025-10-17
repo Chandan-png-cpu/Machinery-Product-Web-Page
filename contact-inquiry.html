@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - My Ceries</title>
+    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+<link rel="stylesheet" href="style.css"> 
+
+    <style>
+        :root {
+            --primary-blue: #0A1F44;
+            --secondary-yellow: #FFC107;
+        }
+        .bg-dark { background-color: var(--primary-blue) !important; }
+        .contact-page { padding-top: 50px; padding-bottom: 50px; min-height: 80vh; }
+        .footer-section { background-color: var(--primary-blue); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">My Ceries</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact-inquiry.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="account.html">Account</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="contact-page container">
+        <h1 class="text-center mb-5 fw-bold">General Inquiries</h1>
+        
+        <div class="row justify-content-center">
+            
+            <div class="col-lg-6 mb-5">
+                <p class="lead text-muted">For sales, support, and partnership questions, please use the details below or fill out the form.</p>
+                
+                <div class="mt-4">
+                    <h5 class="text-primary"><i class="fas fa-map-marker-alt me-2"></i> Headquarters</h5>
+                    <p>123 Industrial Park Drive, Tech City, Global 90210</p>
+                </div>
+                
+                <div class="mt-4">
+                    <h5 class="text-primary"><i class="fas fa-phone-alt me-2"></i> Sales & Support</h5>
+                    <p>Sales: (555) 123-4567<br>Support: (555) 987-6543 (24/7)</p>
+                </div>
+
+                <div class="mt-4">
+                    <h5 class="text-primary"><i class="fas fa-envelope me-2"></i> Email Contact</h5>
+                    <p>sales@myceries.com<br>support@myceries.com</p>
+                </div>
+                
+                <p class="mt-4 small text-muted">Need a custom consultation? <a href="quote.html" class="text-primary">Request a Custom Quote here.</a></p>
+            </div>
+            
+            <div class="col-lg-6 mb-5">
+                <h2>Send Us a Message</h2>
+                <form id="inquiryForm" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="inquiryName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="inquiryName" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inquiryEmail" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="inquiryEmail" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inquiryMessage" class="form-label">Message</label>
+                        <textarea class="form-control" id="inquiryMessage" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Submit Inquiry</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+    <footer class="footer-section py-5 text-white">
+        </footer>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+<script>
+    // Add simple form submission handler for inquiryForm here if needed
+</script>
+</body>
+</html>

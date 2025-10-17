@@ -1,0 +1,355 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - My Ceries Monitoring</title>
+    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+<link rel="stylesheet" href="style.css"> 
+
+    <style>
+        :root { --primary-blue: #0A1F44; }
+        .dashboard-page {
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+        .monitor-card {
+            border-left: 5px solid var(--primary-blue);
+        }
+        .bg-dark {
+            background-color: #0a1f44 !important; 
+        }
+        .logged-out-message {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .audit-log-item {
+            border-left: 3px solid #dee2e6;
+            padding-left: 15px;
+            margin-bottom: 10px;
+        }
+        /* Sticky CTA and Cookie Banner styles are assumed to be in style.css or removed from the dashboard */
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">My Ceries | Monitoring</a>
+            <button class="btn btn-sm btn-outline-light" id="logoutButton">Log Out</button>
+        </div>
+    </nav>
+
+    <div class="dashboard-page container">
+        
+        <div id="contentPlaceholder">
+            </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+<script>
+    // Retrieves audit logs from localStorage (now defined locally for the dashboard)
+    function getAuditLogs() {
+        return JSON.parse(localStorage.getItem('auditLogs') || '[]');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const contentPlaceholder = document.getElementById('contentPlaceholder');
+        const logoutButton = document.getElementById('logoutButton');
+        
+        const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+
+        if (!currentUser) {
+            // Access Denied (Code remains the same)
+            contentPlaceholder.innerHTML = `
+                <div class="row justify-content-center pt-5">
+                    <div class="col-md-8">
+                        <div class="logged-out-message">
+                            <i class="fas fa-lock fa-3x text-danger mb-3"></i>
+                            <h3>Access Denied</h3>
+                            <p class="lead">Please log in to the Qualified Access Portal to view the dashboard.</p>
+                            <a href="account.html" class="btn btn-primary btn-lg">Go to Login / Register</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            logoutButton.style.display = 'none';
+        } else {
+            // User is Logged In (Dashboard View)
+            
+            const auditLogs = getAuditLogs();
+            let logHtml = '<ul class="list-unstyled">';
+            if (auditLogs.length > 0) {
+                auditLogs.forEach(log => {
+                    const icon = log.type === 'LOGIN' ? 'fas fa-sign-in-alt text-success' : 'fas fa-user-plus text-primary';
+                    logHtml += `
+                        <li class="audit-log-item">
+                            <i class="${icon} me-2"></i> 
+                            <strong>${log.type}</strong> by ${log.email} 
+                            <span class="text-muted small float-end">${log.time}</span>
+                        </li>
+                    `;
+                });
+            } else {
+                logHtml += '<li class="text-muted">No recent activity recorded.</li>';
+            }
+            logHtml += '</ul>';
+
+
+            contentPlaceholder.innerHTML = `
+                <h1 class="mb-4">Welcome, ${currentUser.fullName}</h1>
+                <p class="lead text-muted">Real-time monitoring and key performance indicators for your machinery.</p>
+                
+                <div class="row mt-5">
+                    <div class="col-md-4 mb-4">
+                        <div class="card monitor-card p-3 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary"><i class="fas fa-chart-line me-2"></i> Production Rate</h5>
+                                <p class="card-text display-4 fw-bold">98.5%</p>
+                                <p class="card-text small text-muted">Last 24 hours average.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card monitor-card p-3 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary"><i class="fas fa-cogs me-2"></i> Maintenance Status</h5>
+                                <p class="card-text display-4 fw-bold text-success">Optimal</p>
+                                <p class="card-text small text-muted">Next scheduled service: Nov 15th.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card monitor-card p-3 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary"><i class="fas fa-bolt me-2"></i> Energy Usage</h5>
+                                <p class="card-text display-4 fw-bold">15% <small class="text-danger small">↑</small></p>
+                                <p class="card-text small text-muted">Higher than last week's average.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3><i class="fas fa-history me-2"></i> Admin Audit Log (Last 10 Events)</h3>
+                        <div class="bg-white p-4 rounded shadow-sm">
+                            ${logHtml}
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="mt-5">Registered Details</h3>
+                <p>Company: ${currentUser.companyName}</p>
+                <p>Access Email: ${currentUser.email}</p>
+                <p>Registered Since: ${new Date(currentUser.registrationDate).toLocaleDateString()}</p>
+            `;
+
+            // Handle Logout
+            logoutButton.addEventListener('click', function() {
+                sessionStorage.removeItem('currentUser');
+                alert('You have been successfully logged out.');
+                window.location.href = 'account.html'; 
+            });
+        }
+    });
+</script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - My Ceries Client Portal</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+
+    <style>
+        :root { --primary-blue: #0A1F44; }
+        .bg-dark-custom { background-color: var(--primary-blue) !important; }
+        .dashboard-container { 
+            min-height: 100vh; 
+            background-color: #f0f3f6; /* Light gray background for contrast */
+            padding-top: 20px;
+        }
+        .metric-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 5px solid transparent;
+        }
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+            border-left-color: var(--primary-blue);
+        }
+        .status-online { color: #28a745; }
+        .status-alert { color: #ffc107; }
+        .status-offline { color: #dc3545; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">My Ceries</a>
+            <button class="btn btn-sm btn-outline-light" id="logoutButton" style="display:none;">Log Out</button>
+        </div>
+    </nav>
+    <div class="dashboard-container container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-11 pt-4">
+
+                <div id="accessDenied" class="p-5 text-center" style="display: none;">
+                    <i class="fas fa-lock fa-3x text-danger mb-3"></i>
+                    <h2 class="text-danger">Access Denied</h2>
+                    <p class="lead">You must be logged in to view the client dashboard.</p>
+                    <a href="account.html" class="btn btn-primary mt-3">Log In / Register</a>
+                </div>
+
+                <div id="dashboardContent" style="display: none;">
+                    
+                    <h1 class="mb-4">Welcome, <span id="clientName">Client</span>!</h1>
+                    <p class="lead text-muted" id="companyGreeting">Overview for [Company Name].</p>
+
+                    <h3 class="mt-5 mb-3">I. Live Performance & Monitoring</h3>
+                    <div class="row g-4">
+                        
+                        <div class="col-md-4">
+                            <div class="card metric-card shadow-sm p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary"><i class="fas fa-check-circle me-2 status-online"></i> Overall System Status</h5>
+                                    <p class="card-text fs-2 fw-bold text-dark" id="systemStatus">ONLINE</p>
+                                    <p class="small text-muted mb-0">No critical alerts detected in the last 24 hours.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card metric-card shadow-sm p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary"><i class="fas fa-gauge-high me-2"></i> Production Uptime (Last 30 Days)</h5>
+                                    <p class="card-text fs-2 fw-bold text-dark">99.85<span class="fs-6">%</span></p>
+                                    <p class="small text-muted mb-0">Exceeding industry benchmark of 99.5%.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card metric-card shadow-sm p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary"><i class="fas fa-triangle-exclamation me-2 status-alert"></i> Maintenance Alert</h5>
+                                    <p class="card-text fs-2 fw-bold text-warning">Minor</p>
+                                    <p class="small text-muted mb-0">Machine 42-B bearing wear projected in 14 days. <a href="#" class="text-primary">Schedule Service</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5 mb-3">II. Documentation & Resources</h3>
+                    <div class="row g-4">
+                        
+                        <div class="col-md-6">
+                            <div class="card metric-card shadow-sm p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary"><i class="fas fa-file-pdf me-2"></i> Custom Machinery Blueprints</h5>
+                                    <p class="card-text mb-3">Download the final design specifications and material safety data sheets for your bespoke equipment.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Download Specs</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card metric-card shadow-sm p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary"><i class="fas fa-video me-2"></i> Operator Training Videos</h5>
+                                    <p class="card-text mb-3">Access the complete library of operation, troubleshooting, and daily maintenance procedures.</p>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">View Training Portal</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="mt-5 mb-3">III. Long-Term Partnership Support</h3>
+                    <div class="row g-4">
+                        
+                        <div class="col-md-6">
+                            <div class="card metric-card shadow-sm p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary"><i class="fas fa-headset me-2"></i> 24/7 Priority Support Line</h5>
+                                    <p class="card-text fs-4 fw-bold mb-1">1-800-MYCERIES</p>
+                                    <p class="small text-muted">Dedicated support for your company. Reference ID: [Client ID Placeholder]</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card metric-card shadow-sm p-3">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary"><i class="fas fa-ticket me-2"></i> Open Support Tickets</h5>
+                                    <p class="card-text fs-4 fw-bold mb-1">2 <span class="fs-6 text-warning">Awaiting Response</span></p>
+                                    <p class="small text-muted">View status and history of all maintenance and service requests.</p>
+                                    <a href="#" class="btn btn-sm btn-warning mt-2">Manage Tickets</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUserData = sessionStorage.getItem('currentUser');
+            const accessDenied = document.getElementById('accessDenied');
+            const dashboardContent = document.getElementById('dashboardContent');
+            const logoutButton = document.getElementById('logoutButton');
+
+            if (!currentUserData) {
+                // Not logged in: Show access denied
+                accessDenied.style.display = 'block';
+                logoutButton.style.display = 'none';
+            } else {
+                // Logged in: Show dashboard content
+                const user = JSON.parse(currentUserData);
+                const firstName = user.fullName.split(' ')[0];
+                
+                dashboardContent.style.display = 'block';
+                logoutButton.style.display = 'block';
+                
+                // Personalize the dashboard
+                document.getElementById('clientName').textContent = firstName;
+                document.getElementById('companyGreeting').textContent = `Overview for ${user.companyName}.`;
+            }
+
+            // Handle Logout function (for the navbar button)
+            logoutButton.addEventListener('click', function() {
+                sessionStorage.removeItem('currentUser');
+                alert('You have been successfully logged out.');
+                window.location.href = 'account.html';
+            });
+        });
+
+
+        
+    </script>
+</body>
+</html>

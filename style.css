@@ -1,0 +1,488 @@
+
+:root {
+    --primary-blue: #007bff; 
+    --dark-blue: #0a1f44; 
+    --footer-blue: #061122; 
+    --text-light: #f8f9fa;
+    --text-muted-dark-bg: #ccc;
+}
+
+body {
+    font-family: 'Arial', sans-serif; 
+    background-color: var(--text-light);
+    line-height: 1.6;
+}
+
+
+.bg-dark {
+    background-color: var(--dark-blue) !important; 
+}
+
+.text-primary {
+    color: var(--primary-blue) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3;
+}
+
+.btn-outline-primary {
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-blue);
+    color: #fff;
+}
+
+.btn-outline-light {
+    color: var(--text-light);
+    border-color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--text-light);
+    color: var(--dark-blue);
+}
+
+
+.navbar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.navbar-brand img {
+    filter: brightness(-4);
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.7); 
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #fff; 
+}
+
+
+.hero-section {
+    background-color: var(--dark-blue);
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+    background-image: url('images/logo1\ \(5\).png'); 
+    background-size: 500px 500px;
+    /* background-repeat: repeat; */
+    padding-top: 8rem !important; 
+    padding-bottom: 8rem !important;
+}
+
+/* Overlay for depth and text contrast */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(10, 31, 68, 0.9) 0%, rgba(10, 31, 68, 0.6) 100%);
+    z-index: 1;
+}
+
+.hero-section > .container {
+    position: relative;
+    z-index: 2; /* Ensures content is above the overlay */
+}
+
+.hero-section h1 {
+    font-size: 3.5rem; /* Larger hero headline */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem !important;
+}
+
+
+/* Feature boxes beneath hero headline */
+.feature-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    color: var(--text-light);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    height: 100%; /* Ensure uniform height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-box:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-8px); /* Subtle lift on hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.feature-box i {
+    color: var(--primary-blue); /* Primary blue for icons */
+    margin-bottom: 0.75rem;
+}
+
+/* =======================
+    C. ACHIEVEMENTS SECTION STYLES
+======================== */
+.achievements-section {
+    background-color: var(--text-light); /* White background for this section */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.achievements-section h2 {
+    color: var(--dark-blue);
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.achievements-section .achievement-item {
+    padding: 1rem;
+    color: var(--dark-blue);
+}
+
+.achievements-section .achievement-item h3 {
+    color: var(--primary-blue); /* Numbers in primary blue */
+    font-weight: 700;
+}
+
+.achievements-section .achievement-item p {
+    color: #6c757d; /* Standard muted color */
+    font-weight: 500;
+}
+
+/* =======================
+    D. SERVICES SECTION STYLES
+======================== */
+.services-section {
+    background-color: var(--dark-blue);
+    color: var(--text-light);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.services-section h2 {
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.services-section .text-muted {
+    color: var(--text-muted-blue-bg-) !important; /* Lighter muted text */
+}
+
+.service-card {
+    background-color: rgba(255, 255, 255, 0.05) !important; /* Subtle transparent background */
+    border: 1px solid rgba(42, 40, 88, 0.1) !important;
+    padding: 2rem !important;
+    border-radius: 0.75rem !important;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.service-card:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4) !important; /* Glow effect */
+    transform: translateY(-8px);
+}
+
+.service-card i {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+/* =======================
+    E. TESTIMONIALS SECTION STYLES
+======================== */
+.testimonials-section {
+    background-color: var(--dark-blue); /* Consistent dark background */
+    color: var(--text-light);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonials-section h2 {
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.testimonial-box {
+    background-color: rgba(203, 188, 188, 0.08); /* Slightly darker transparent than service cards */
+    border-left: 5px solid var(--primary-blue); /* Distinct blue border */
+    padding: 2rem;
+    border-radius: 0.75rem;
+}
+
+.testimonial-box .lead {
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.client-logo {
+    width: 70px; /* Slightly larger client logo */
+    height: 70px;
+    object-fit: contain;
+    background-color: #fff; /* White background for logo visibility */
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* =======================
+    F. INSIGHTS SECTION STYLES
+======================== */
+.insights-section {
+    background-color: var(--text-light); /* White background */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.insights-section h2 {
+    color: var(--dark-blue);
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.insights-section .card {
+    border: none;
+    transition: all 0.3s ease;
+    background-color: #fff; /* Explicitly white for cards */
+    padding: 1rem;
+}
+
+.insights-section .card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    transform: translateY(-5px);
+}
+
+.insights-section .card-title {
+    color: var(--dark-blue);
+    font-weight: bold;
+    font-size: 1.15rem;
+    min-height: 50px; /* Ensure consistent card title height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.insights-section .card-subtitle {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+/* =======================
+    G. CTA / CONTACT FORM SECTION STYLES
+======================== */
+.cta-form-section {
+    background-color: var(--dark-blue);
+    color: var(--text-light);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-form-section h3 {
+    font-weight: bold;
+    font-size: 2.25rem;
+}
+
+.cta-form-section .lead {
+    font-size: 1.15rem;
+}
+
+.cta-form-section form {
+    background-color: #fff; /* White form background */
+    padding: 2.5rem !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.cta-form-section .form-control {
+    border: 1px solid #ced4da;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+
+.cta-form-section .form-check-label a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* =======================
+    H. FOOTER STYLES
+======================== */
+.footer-section {
+    background-color: var(--footer-blue);
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    border-top: 3px solid var(--primary-blue); /* Prominent blue line */
+}
+
+.footer-section h5 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.footer-section .list-unstyled li a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    line-height: 2;
+    transition: color 0.2s ease;
+}
+
+.footer-section .list-unstyled li a:hover {
+    color: var(--primary-blue) !important;
+}
+
+.footer-section .social-icons a {
+    color: rgba(255, 255, 255, 0.8);
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+}
+
+.footer-section .social-icons a:hover {
+    color: var(--primary-blue) !important;
+}
+
+.footer-section hr {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-section .text-white-50 {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.footer-section .text-white-50 a {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+.footer-section .text-white-50 a:hover {
+    color: var(--primary-blue) !important;
+}
+/* --- NEW UX Enhancements --- */
+
+/* 1. Sticky CTA Button */
+.sticky-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050; /* Above navbar (1030) */
+    animation: fadeIn 0.5s ease-out;
+}
+/* Hide the sticky CTA on smaller screens if desired */
+@media (max-width: 768px) {
+    .sticky-cta {
+        display: none;
+    }
+}
+
+/* 2. Cookie Consent Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100; /* Highest priority */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    color: #fff;
+    padding: 10px 0;
+    display: none; /* Hidden by default, shown by JS */
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.cookie-banner.show {
+    display: block;
+    opacity: 1;
+}
+/* --- END NEW UX Enhancements --- */
+/* Custom CSS for Interactive Feature Boxes */
+.feature-card {
+    /* Set a minimum height for visual uniformity before expansion */
+    min-height: 280px; 
+    transition: all 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2) !important;
+}
+
+.feature-toggle {
+    /* Important: Reset button styling */
+    border: none;
+    text-align: inherit;
+    color: inherit !important;
+    background-color: transparent !important;
+    /* Important for placement: makes the button fill the card-body */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.feature-toggle:focus, .feature-toggle:active {
+    outline: none;
+    box-shadow: none;
+}
+
+/* 3. Arrow Rotation Effect */
+.expand-icon {
+    transition: transform 0.3s ease;
+}
+
+.feature-toggle[aria-expanded="true"] .expand-icon {
+    transform: rotate(180deg);
+}
+
+/* Hide the body content when collapsed */
+.collapse:not(.show) .card-footer {
+    display: none;
+}
+
+/* Ensure card footer sits correctly */
+.card-footer {
+    border-radius: 0 0 0.375rem 0.375rem; /* Match Bootstrap card corner radius */
+    border-top: 1px solid rgba(168, 138, 138, 0.1);
+}
+
+/* Arrow Rotation CSS (Crucial for visual feedback) */
+.expand-icon {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+/* When the card is expanded, rotate the arrow 180 degrees */
+.card-header[aria-expanded="true"] .expand-icon {
+    transform: rotate(180deg);
+}

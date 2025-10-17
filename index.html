@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Ceries - Precision Machinery Solutions</title>
+    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo1 (2).png" alt="My Ceries Logo" height="100" class="d-inline-block align-text-middle">
+
+                <span class="ms-2">My Ceries</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#hero">Home</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="productsDropdown">
+                            <li><a class="dropdown-item" href="cnc-milling.html">CNC Milling Machines</a></li>
+                            <li><a class="dropdown-item" href="high-speed-robotics.html">High-Speed Robotics</a></li>
+                            <li><a class="dropdown-item" href="precision-laser-cutters.html">Precision Laser Cutters</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">View All Products</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#insights">Insights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-inquiry.html">Contact Us</a></li>
+                    <li class="nav-item dropdown" id="accountNavItem">
+                <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user-circle me-1"></i> Account
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="accountDropdown">
+                    <li><a class="dropdown-item" href="account.html">
+                        <i class="fas fa-sign-in-alt me-2"></i> Client Login
+                    </a></li>
+                    <li><a class="dropdown-item" href="account.html">
+                        <i class="fas fa-user-plus me-2"></i> Register New
+                    </a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-chart-bar me-2"></i> Dashboard</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+<header id="hero" class="hero-section text-white text-center py-5">
+        <div class="container py-5">
+            <h1 class="display-5 fw-bold mb-4">Value Creation Through Advanced Industrial Machinery</h1>
+            <p class="lead mb-5">Deliver **Precision, Performance, and Productivity** at Scale, Speed, and with Strategic Control.</p>
+            <div class="row pt-4 justify-content-center">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box p-3">
+                        <!-- <i class="fas fa-cogs fa-2x mb-2"></i> -->
+                        <!-- <h5>Bespoke Machinery</h5>
+                        <p class="small m-0">Custom-engineered equipment for unique industrial needs.</p> -->
+                        <div class="card-header bg-blue text-white text-center border-0 p-4" data-bs-toggle="collapse" data-bs-target="#collapseBespokeContent" aria-expanded="false" aria-controls="collapseBespokeContent" style="cursor: pointer;">
+                    <i class="fas fa-cogs fa-3x mb-3 text-info"></i>
+                    <h5 class="card-title fw-bold">Bespoke Machinery</h5>
+                    <p class="small text-white mb-3">Custom-engineered equipment for unique industrial needs.</p>
+                    <i class="fas fa-chevron-down small expand-icon mt-2"></i>
+                </div>
+                
+                <div id="collapseBespokeContent" class="collapse">
+                    <div class="card-body text-start border-top border-secondary pt-4 bg-dark">
+                        <p class="small">Our engineering team designs and builds complete, integrated systems tailored to your facility layout.</p>
+                        <ul class="small list-unstyled">
+                            <li><i class="fas fa-check-circle text-info me-2"></i> Full System Design</li>
+                            <li><i class="fas fa-check-circle text-info me-2"></i> Material Specification</li>
+                        </ul>
+                        <a href="contact-inquiry.html" class="btn btn-sm btn-outline-info w-100 mt-3">Design Consultation</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box p-3">
+                        <!-- <i class="fas fa-chart-bar fa-2x mb-2"></i>
+                        <h5>Performance Metrics</h5>
+                        <p class="small m-0">Data-driven performance tracking and optimization.</p> -->
+                        <div class="card-header bg-bluetext-whiteborder-0 p-4" data-bs-toggle="collapse" data-bs-target="#collapseMetricsContent" aria-expanded="false" aria-controls="collapseMetricsContent" style="cursor: pointer;">
+                    <i class="fas fa-chart-line fa-3x mb-3 text-info"></i>
+                    <h5 class="card-title fw-bold">Performance Metrics</h5>
+                    <p class="small text-white mb-3">Data-driven performance tracking and optimization.</p>
+                    <i class="fas fa-chevron-down small expand-icon mt-2"></i>
+                </div>
+
+                <div id="collapseMetricsContent" class="collapse">
+                    <div class="card-body text-start border-top border-secondary pt-4 bg-dark">
+                        <p class="small">Machines feed real-time data to your dashboard, allowing for proactive maintenance planning and bottleneck identification.</p>
+                        <ul class="small list-unstyled">
+                            <li><i class="fas fa-check-circle text-info me-2"></i> Real-Time Monitoring</li>
+                            <li><i class="fas fa-check-circle text-info me-2"></i> Predictive Maintenance</li>
+                        </ul>
+                        <a href="dashboard.html" class="btn btn-sm btn-outline-info w-100 mt-3">View Live Demo Dashboard</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box p-3">
+                        <!-- <i class="fas fa-handshake fa-2x mb-2"></i>
+                        <h5>Long-Term Partnership</h5>
+                        <p class="small m-0">Dedicated support from installation to maintenance.</p> -->
+                         <div class="card-header bg-bluetext-white border-0 p-4" data-bs-toggle="collapse" data-bs-target="#collapsePartnershipContent" aria-expanded="false" aria-controls="collapsePartnershipContent" style="cursor: pointer;">
+                    <i class="fas fa-handshake fa-3x mb-3 text-info"></i>
+                    <h5 class="card-title fw-bold">Long-Term Partnership</h5>
+                    <p class="small text-whitemb-3">Dedicated support from installation to maintenance.</p>
+                    <i class="fas fa-chevron-down small expand-icon mt-2"></i>
+                </div>
+
+                <div id="collapsePartnershipContent" class="collapse">
+                    <div class="card-body text-start border-top border-secondary pt-4 bg-dark">
+                        <p class="small">We offer continuous operational support and training for your technical teams throughout the entire lifecycle of your equipment.</p>
+                        <ul class="small list-unstyled">
+                            <li><i class="fas fa-check-circle text-info me-2"></i> 24/7 Priority Support</li>
+                            <li><i class="fas fa-check-circle text-info me-2"></i> Operator Training Programs</li>
+                        </ul>
+                        <a href="contact-inquiry.html" class="btn btn-sm btn-outline-info w-100 mt-3">Service Plans & Support</a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+<section class="achievements-section py-5 text-center">
+        <div class="container">
+            <h2 class="mb-5">Operational and Strategic Achievements</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="achievement-item">
+                        <h3 class="display-4 fw-bold text-primary">50%<small>+</small></h3>
+                        <p class="text-muted">Efficiency Gains Delivered</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="achievement-item">
+                        <h3 class="display-4 fw-bold text-primary">40%</h3>
+                        <p class="text-muted">Reduction in Downtime</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="achievement-item">
+                        <h3 class="display-4 fw-bold text-primary">13<small>+</small></h3>
+                        <p class="text-muted">Industries Served</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="achievement-item">
+                        <h3 class="display-4 fw-bold text-primary">7</h3>
+                        <p class="text-muted">Patented Technologies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="client-logos-section py-5 bg-light text-center">
+        <div class="container">
+            <h3 class="mb-5 text-muted">Trusted by Leading Global Manufacturers</h3>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-2 col-4 mb-4"><img src="images/logo1.png" alt="Client 1" class="img-fluid opacity-50" style="max-height: 600px; filter: grayscale(100%);"></div>
+                <div class="col-md-2 col-4 mb-4"><img src="images/logo2.jpg" alt="Client 2" class="img-fluid opacity-50" style="max-height: 600px; filter: grayscale(100%);"></div>
+                <div class="col-md-2 col-4 mb-4"><img src="images/logo3.jpg" alt="Client 3" class="img-fluid opacity-50" style="max-height: 600px; filter: grayscale(100%);"></div>
+                <div class="col-md-2 col-4 mb-4"><img src="images/logo4.png" alt="Client 4" class="img-fluid opacity-50" style="max-height: 600px; filter: grayscale(100%);"></div>
+                <div class="col-md-2 col-4 mb-4"><img src="images/logo5.jpg" alt="Client 5" class="img-fluid opacity-50" style="max-height: 600px; filter: grayscale(100%);"></div>
+            </div>
+        </div>
+    </section>
+
+    
+<section id="services" class="services-section py-5 text-center">
+        <div class="row justify-content-center g-4">
+        
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 bg-white text-dark feature-card" id="cardDesign">
+                
+                <div class="card-header bg-blue text-center border-0 p-4" data-bs-toggle="collapse" data-bs-target="#collapseDesignContent" aria-expanded="false" aria-controls="collapseDesignContent" style="cursor: pointer;">
+                    
+                    <i class="fas fa-drafting-compass fa-3x mb-3 text-primary"></i> 
+                    <h5 class="card-title fw-bold text-primary">Precision Product Design</h5>
+                    <p class="small text-black mb-3">Conceptualizing, 3D modeling, and prototyping machinery for optimal manufacturing output.</p>
+                    <i class="fas fa-chevron-down small expand-icon mt-2 text-primary"></i>
+                </div>
+                
+                <div id="collapseDesignContent" class="collapse">
+                    <div class="card-body text-start border-top pt-4 bg-light">
+                        <p class="small text-secondary">We leverage advanced CAD/CAM software to simulate performance and create production-ready blueprints, minimizing design iterations and waste.</p>
+                        <ul class="small list-unstyled text-secondary">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> FEA Stress Analysis</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Rapid Prototyping & Testing</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Digital Twin Creation</li>
+                        </ul>
+                        <a href="contact-inquiry.html" class="btn btn-sm btn-primary w-100 mt-3">Start Your Design Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 bg-white text-dark feature-card" id="cardLogistics">
+
+                <div class="card-header bg-white text-center border-0 p-4" data-bs-toggle="collapse" data-bs-target="#collapseLogisticsContent" aria-expanded="false" aria-controls="collapseLogisticsContent" style="cursor: pointer;">
+                    
+                    <i class="fas fa-shipping-fast fa-3x mb-3 text-primary"></i>
+                    <h5 class="card-title fw-bold text-primary">Supply Chain & Logistics</h5>
+                    <p class="small text-black mb-3">Seamless delivery and installation of complex, heavy industrial equipment.</p>
+                    <i class="fas fa-chevron-down small expand-icon mt-2 text-primary"></i>
+                </div>
+
+                <div id="collapseLogisticsContent" class="collapse">
+                    <div class="card-body text-start border-top pt-4 bg-light">
+                        <p class="small text-secondary">We manage the entire process from factory floor to your site, including customs clearance, specialized rigging, and final setup by certified technicians.</p>
+                        <ul class="small list-unstyled text-secondary">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Global Compliance Management</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> On-Site Installation & Calibration</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Real-Time Shipment Tracking</li>
+                        </ul>
+                        <a href="contact-inquiry.html" class="btn btn-sm btn-primary w-100 mt-3">Inquire About Delivery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 bg-white text-dark feature-card" id="cardOptimization">
+
+                <div class="card-header bg-blue text-center border-0 p-4" data-bs-toggle="collapse" data-bs-target="#collapseOptimizationContent" aria-expanded="false" aria-controls="collapseOptimizationContent" style="cursor: pointer;">
+                    
+                    <i class="fas fa-tachometer-alt fa-3x mb-3 text-primary"></i>
+                    <h5 class="card-title fw-bold text-primary">Performance Optimization</h5>
+                    <p class="small text-black mb-3">Post-sale calibration, IoT integration, and continuous monitoring for maximum uptime.</p>
+                    <i class="fas fa-chevron-down small expand-icon mt-2 text-primary"></i>
+                </div>
+
+                <div id="collapseOptimizationContent" class="collapse">
+                    <div class="card-body text-start border-top pt-4 bg-blue">
+                        <p class="small text-secondary">Our digital services team ensures your machinery is running at peak efficiency using data-driven insights and AI-powered predictive maintenance alerts.</p>
+                        <ul class="small list-unstyled text-secondary">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Remote Diagnostic Service</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> OEE and KPI Tracking</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Software Update Management</li>
+                        </ul>
+                        <a href="dashboard.html" class="btn btn-sm btn-primary w-100 mt-3">View Monitoring Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    
+<section class="testimonials-section py-5 text-white">
+        <div class="container py-4">
+            <h2 class="text-center mb-5">What Our Customers Are Saying</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="testimonial-box p-4 rounded">
+                        <div class="d-flex align-items-start mb-3">
+                            <img src="images/client1.jpg" alt="Client Logo" class="client-logo me-3">
+                            <p class="m-0 lead fst-italic">"My Ceries didn't just sell us a machine; they delivered a complete manufacturing solution. Our production line efficiency jumped by over 25% in the first quarter. Their machinery is robust, reliable, and backed by world-class support."</p>
+                        </div>
+                        <p class="text-end fw-bold mb-0">- Jane Doe, CEO of Global Manufacturing Inc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<section id="insights" class="insights-section py-5 text-center">
+        <div class="container">
+        <section class="container py-5 bg-white">
+    <h2 class="text-center mb-5 text-dark">Explore Our Featured Insights</h2>
+    
+    <div class="row justify-content-center g-4">
+        
+        <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm border-0 insight-card" id="cardCaseStudy">
+                
+                <div class="card-header bg-white text-center border-0 pt-4" data-bs-toggle="collapse" data-bs-target="#collapseCaseStudy" aria-expanded="false" aria-controls="collapseCaseStudy" style="cursor: pointer;">
+                    <span class="badge bg-secondary mb-2">CASE STUDY</span>
+                    <h5 class="card-title fw-bold text-black">Reducing Energy Costs in Heavy Industrial Operations</h5>
+                    <i class="fas fa-chevron-down small expand-icon mt-2 text-secondary"></i>
+                </div>
+                
+                <div id="collapseCaseStudy" class="collapse">
+                    <div class="card-body text-start border-top pt-3 bg-light">
+                        <p class="small text-secondary">A detailed look at how predictive maintenance reduced idle time by 15% and cut annual energy expenditure by $1.2M at Hexatech Dynamics.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary w-100 mt-2">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm border-0 insight-card" id="cardArticle">
+
+                <div class="card-header bg-white text-center border-0 pt-4" data-bs-toggle="collapse" data-bs-target="#collapseArticle" aria-expanded="false" aria-controls="collapseArticle" style="cursor: pointer;">
+                    <span class="badge bg-secondary mb-2">ARTICLE</span>
+                    <h5 class="card-title fw-bold text-black">The Future of Robotics in Precision Manufacturing</h5>
+                    <i class="fas fa-chevron-down small expand-icon mt-2 text-secondary"></i>
+                </div>
+
+                <div id="collapseArticle" class="collapse">
+                    <div class="card-body text-start border-top pt-3 bg-light">
+                        <p class="small text-secondary">We explore how integrated AI and lightweight materials are driving the next generation of industrial automation for companies like RoboSys Automation.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary w-100 mt-2">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm border-0 insight-card" id="cardWhitepaper">
+
+                <div class="card-header bg-white text-center border-0 pt-4" data-bs-toggle="collapse" data-bs-target="#collapseWhitepaper" aria-expanded="false" aria-controls="collapseWhitepaper" style="cursor: pointer;">
+                    <span class="badge bg-secondary mb-2">WHITEPAPER</span>
+                    <h5 class="card-title fw-bold text-black">5 Ways IoT Transforms Maintenance Schedules</h5>
+                    <i class="fas fa-chevron-down small expand-icon mt-2 text-secondary"></i>
+                </div>
+
+                <div id="collapseWhitepaper" class="collapse">
+                    <div class="card-body text-start border-top pt-3 bg-light">
+                        <p class="small text-secondary">A deep dive into sensor integration, cloud analytics, and the shift from reactive to fully predictive maintenance across the manufacturing sector.</p>
+                        <a href="#" class="btn btn-sm btn-primary w-100 mt-2">Download Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm border-0 insight-card" id="cardNews">
+
+                <div class="card-header bg-white text-center border-0 pt-4" data-bs-toggle="collapse" data-bs-target="#collapseNews" aria-expanded="false" aria-controls="collapseNews" style="cursor: pointer;">
+                    <span class="badge bg-secondary mb-2">NEWS</span>
+                    <h5 class="card-title fw-bold text-black">My Ceries Acquires Leading Automation Firm</h5>
+                    <i class="fas fa-chevron-down small expand-icon mt-2 text-secondary"></i>
+                </div>
+
+                <div id="collapseNews" class="collapse">
+                    <div class="card-body text-start border-top pt-3 bg-light">
+                        <p class="small text-secondary">The acquisition of Quantum Innovate significantly expands our portfolio in AI-driven automation solutions and strengthens our global market position.</p>
+                        <a href="#" class="btn btn-sm btn-primary w-100 mt-2">Read Announcement</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="text-center mt-5">
+        <a href="insights.html" class="btn btn-lg btn-primary shadow-sm"><i class="fas fa-arrow-right me-2"></i> Explore All Insights</a>
+    </div>
+</section>
+    </section>
+
+    
+<section id="contact-cta" class="cta-form-section py-5 text-white">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h3 class="mb-3">Kickstart Your Journey with My Ceries</h3>
+                    <p class="lead">Ready to elevate your manufacturing process? Let's connect with a qualified engineer.</p>
+                    <a href="quote.html" class="btn btn-outline-light btn-lg mt-3"><i class="fas fa-headphones-alt me-2"></i> Request a Quote</a>
+                </div>
+                <div class="col-lg-6">
+                    <form class="p-4 rounded bg-white shadow" id="emailNotificationForm">
+                        <h4 class="text-dark mb-4">Get Notified: General Inquiry</h4>
+                        <div class="mb-3">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email Address" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="message" class="form-control" rows="3" placeholder="Briefly describe your industrial need..."></textarea>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="privacyCheckIndex" required>
+                            <label class="form-check-label text-dark small" for="privacyCheckIndex">
+                                I agree to the <a href="#" class="text-primary">Privacy Policy</a>.
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Inquiry & Get Notified</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<footer class="footer-section py-5 text-white">
+        <div class="container">
+            <div class="row mb-4 pb-3 border-bottom border-secondary">
+                <div class="col-12 text-center">
+                    <h5 class="mb-3">Quality & Compliance</h5>
+                    <div class="d-flex justify-content-center flex-wrap gap-4">
+                        <div class="text-white-50 small"><i class="fas fa-certificate text-warning me-2"></i> ISO 9001:2015 Certified</div>
+                        <div class="text-white-50 small"><i class="fas fa-globe me-2"></i> CE & RoHS Compliant</div>
+                        <div class="text-white-50 small"><i class="fas fa-shield-alt me-2"></i> 3-Year Warranty Standard</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">My Ceries</h5>
+                    <p class="small">Precision Machinery Solutions for the Modern Industrialist.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="fab fa-facebook-f fa-lg"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#hero" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="cnc-milling.html" class="text-white-50 text-decoration-none">Products</a></li>
+                        <li><a href="#services" class="text-white-50 text-decoration-none">Solutions</a></li>
+                        <li><a href="#insights" class="text-white-50 text-decoration-none">Insights</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Product Lines</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="cnc-milling.html" class="text-white-50 text-decoration-none">CNC Machines</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Robotic Arms</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Injection Molders</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Custom Builds</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Careers</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3">
+            <div class="text-center small text-white-50">
+                &copy; <span id="year"></span> My Ceries. All Rights Reserved. | <a href="#" class="text-white-50">Privacy Policy</a> | <a href="#" class="text-white-50">Terms of Use</a>
+            </div>
+        </div>
+        <div class="sticky-cta">
+        <a href="quote.html" class="btn btn-warning btn-lg shadow-lg">
+            <i class="fas fa-calculator me-2"></i> Get Custom Quote
+        </a>
+    </div>
+
+    <div class="cookie-banner" id="cookieConsentBanner">
+        <div class="container d-flex justify-content-between align-items-center">
+            <p class="mb-0 small me-3">
+                This website uses essential cookies to ensure full site functionality and enhance your experience. By continuing, you agree to our <a href="#" class="text-info text-decoration-none">Privacy Policy</a>.
+            </p>
+            <button id="acceptCookies" class="btn btn-primary btn-sm flex-shrink-0">Accept & Close</button>
+        </div>
+    </div>
+    </footer>
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const accountNavItem = document.getElementById('accountNavItem');
+        const currentUserData = sessionStorage.getItem('currentUser');
+
+        if (currentUserData) {
+            const user = JSON.parse(currentUserData);
+            const firstName = user.fullName.split(' ')[0]; // Get only the first name for brevity
+
+            // Inject personalized dropdown HTML
+            accountNavItem.innerHTML = `
+                <a class="nav-link dropdown-toggle text-warning" href="#" id="loggedInDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user-circle me-1"></i> Welcome, ${firstName}!
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="loggedInDropdown">
+                    <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-chart-bar me-2"></i> My Dashboard</a></li>
+                    <li><a class="dropdown-item" href="profile.html"><i class="fas fa-cog me-2"></i> Account Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#" id="navLogoutButton">
+                        <i class="fas fa-sign-out-alt me-2"></i> Log Out
+                    </a></li>
+                </ul>
+            `;
+
+            // Add Logout handler to the new button
+            const navLogoutButton = document.getElementById('navLogoutButton');
+            if (navLogoutButton) {
+                navLogoutButton.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    sessionStorage.removeItem('currentUser');
+                    alert('You have been successfully logged out.');
+                    window.location.href = 'index.html'; // Redirect to refresh the navbar
+                });
+            }
+        }
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    // Select all clickable card headers
+    const toggles = document.querySelectorAll('.card-header[data-bs-toggle="collapse"]');
+    
+    toggles.forEach(toggle => {
+        // Find the specific content collapse element this toggle controls
+        const targetId = toggle.getAttribute('data-bs-target');
+        const collapseElement = document.querySelector(targetId);
+
+        if (collapseElement) {
+            // Set initial state based on the collapse content
+            toggle.setAttribute('aria-expanded', collapseElement.classList.contains('show'));
+
+            // Listen for the Bootstrap collapse events
+            collapseElement.addEventListener('show.bs.collapse', function () {
+                toggle.setAttribute('aria-expanded', 'true');
+            });
+
+            collapseElement.addEventListener('hide.bs.collapse', function () {
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all clickable card headers
+    const toggles = document.querySelectorAll('.card-header[data-bs-toggle="collapse"]');
+    
+    toggles.forEach(toggle => {
+        const targetId = toggle.getAttribute('data-bs-target');
+        const collapseElement = document.querySelector(targetId);
+
+        if (collapseElement) {
+            // Set initial state
+            toggle.setAttribute('aria-expanded', collapseElement.classList.contains('show'));
+
+            // Use Bootstrap events to update the attribute for CSS rotation
+            collapseElement.addEventListener('show.bs.collapse', function () {
+                toggle.setAttribute('aria-expanded', 'true');
+            });
+
+            collapseElement.addEventListener('hide.bs.collapse', function () {
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        }
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all clickable card headers
+    const toggles = document.querySelectorAll('.card-header[data-bs-toggle="collapse"]');
+    
+    toggles.forEach(toggle => {
+        const targetId = toggle.getAttribute('data-bs-target');
+        const collapseElement = document.querySelector(targetId);
+
+        if (collapseElement) {
+            // Set initial state
+            toggle.setAttribute('aria-expanded', collapseElement.classList.contains('show'));
+
+            // Use Bootstrap events to update the attribute for CSS rotation
+            collapseElement.addEventListener('show.bs.collapse', function () {
+                toggle.setAttribute('aria-expanded', 'true');
+            });
+
+            collapseElement.addEventListener('hide.bs.collapse', function () {
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        }
+    });
+});
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>
